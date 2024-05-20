@@ -7,8 +7,6 @@ jobs:
   show_branch:
     runs-on: [macos-latest]
     steps:
-      - uses: actions/checkout@v2
-
       - name: Set output
         id: vars
         run: echo ::set-output name=short_ref::${GITHUB_REF#refs/*/}
