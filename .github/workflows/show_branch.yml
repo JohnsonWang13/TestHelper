@@ -7,4 +7,4 @@ jobs:
   show_branch:
     runs-on: [macos-latest]
     steps:
-    - run: echo "Hellow world"
+    - run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
