@@ -14,14 +14,6 @@ on:
         description: 'Test scenario tags'
         required: false
         type: boolean
-      environment:
-        description: 'Environment to run tests against'
-        required: true
-        type: environment
-        options:
-        - Prod
-        - Stag
-        - Debug
 
 jobs:
   log-the-inputs:
