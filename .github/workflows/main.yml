@@ -15,7 +15,10 @@ on:
         required: false
         type: boolean
 
-jobs:
+jobs: 
+  call-workflow:
+    uses: ./.github/workflows/show_branch.yml
+    
   log-the-inputs:
     runs-on: ubuntu-latest
     steps:
