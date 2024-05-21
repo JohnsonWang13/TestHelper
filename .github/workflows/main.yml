@@ -21,5 +21,6 @@ jobs:
     steps:
       - name: send message to slack
         run: |
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"Finished!"}' https://hooks.slack.com/services/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
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"Finished!"}' https://hooks.slack.com/services/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
+
     
