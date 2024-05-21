@@ -1,25 +1,17 @@
 on:
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'
+      branch:
+        description: 'Branch to run the workflow on'
         required: true
-        default: 'warning'
-        type: choice
-        options:
-        - info
-        - warning
-        - debug
-      tags:
-        description: 'Test scenario tags'
-        required: false
-        type: boolean
 
 jobs: 
   checkout:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.inputs.branch }}
 
   call-workflow:
     uses: ./.github/workflows/show_branch.yml
