@@ -18,6 +18,8 @@ jobs:
 
   send-message-to-slack:
     runs-on: macos-latest
-    run: |
-      curl -X POST -H 'Content-type: application/json' --data '{"text":"Finished!"}' https://hooks.slack.com/services/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
+    steps:
+      - name: send message to slack
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"Finished!"}' https://hooks.slack.com/services/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
     
