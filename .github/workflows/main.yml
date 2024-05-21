@@ -15,15 +15,9 @@ jobs:
 
   call-workflow:
     uses: ./.github/workflows/show_branch.yml
+
+  send-message-to-slack:
+    runs-on: macos-latest
+    run: |
+      curl -X POST -H 'Content-type: application/json' --data '{"text":"Finished!"}' https://hooks.slack.com/services/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
     
-  log-the-inputs:
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          echo "Log level: $LEVEL"
-          echo "Tags: $TAGS"
-          echo "Environment: $ENVIRONMENT"
-        env:
-          LEVEL: ${{ inputs.logLevel }}
-          TAGS: ${{ inputs.tags }}
-          ENVIRONMENT: ${{ inputs.environment }}
